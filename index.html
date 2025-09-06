@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCarbo - Invista em um Futuro Sustentável</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins e Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones (Lucide Icons) -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <style>
+        /* Configurações personalizadas que complementam o Tailwind */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Cores personalizadas baseadas no logo da EduCarbo */
+        .bg-educarbo-green { background-color: #6FAA41; }
+        .text-educarbo-green { color: #6FAA41; }
+        .border-educarbo-green { border-color: #6FAA41; }
+        .hover\:bg-educarbo-green-dark:hover { background-color: #588a34; }
+
+        .bg-educarbo-blue { background-color: #43A5D4; }
+        .text-educarbo-blue { color: #43A5D4; }
+        .border-educarbo-blue { border-color: #43A5D4; }
+        .hover\:bg-educarbo-blue-dark:hover { background-color: #3684a9; }
+        
+        .bg-educarbo-gray { background-color: #6D6E71; }
+        .text-educarbo-gray { color: #6D6E71; }
+
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/2c3e50/ffffff?text=Natureza+e+Tecnologia');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Animação para o chat */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(67, 165, 212, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(67, 165, 212, 0); }
+        }
+        .animate-pulse-blue {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- ========== HEADER ========== -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <img src="https://i.ibb.co/L5T1fV9/edu-Carbo.jpg" alt="Logo EduCarbo" class="h-10">
+            </div>
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#home" class="text-educarbo-gray hover:text-educarbo-green transition">Home</a>
+                <a href="#sobre" class="text-educarbo-gray hover:text-educarbo-green transition">Sobre Nós</a>
+                <a href="#cursos" class="text-educarbo-gray hover:text-educarbo-green transition">Cursos</a>
+                <a href="#blog" class="text-educarbo-gray hover:text-educarbo-green transition">Blog</a>
+                <a href="#" class="text-educarbo-gray hover:text-educarbo-green transition">Preços</a>
+            </div>
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#" class="text-educarbo-blue hover:underline">Entrar</a>
+                <a href="#" class="bg-educarbo-green text-white px-6 py-2 rounded-full hover:bg-educarbo-green-dark transition">Assine Agora</a>
+            </div>
+            <div class="lg:hidden">
+                <button id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4 space-y-2">
+            <a href="#home" class="block text-educarbo-gray hover:text-educarbo-green transition">Home</a>
+            <a href="#sobre" class="block text-educarbo-gray hover:text-educarbo-green transition">Sobre Nós</a>
+            <a href="#cursos" class="block text-educarbo-gray hover:text-educarbo-green transition">Cursos</a>
+            <a href="#blog" class="block text-educarbo-gray hover:text-educarbo-green transition">Blog</a>
+            <a href="#" class="block text-educarbo-gray hover:text-educarbo-green transition">Preços</a>
+             <div class="border-t pt-4 space-y-2">
+                <a href="#" class="block text-educarbo-blue hover:underline">Entrar</a>
+                <a href="#" class="block bg-educarbo-green text-white text-center px-6 py-2 rounded-full hover:bg-educarbo-green-dark transition">Assine Agora</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="home" class="hero-section text-white h-[80vh] flex items-center">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Desvende o Mercado de Crédito de Carbono.</h1>
+                <p class="text-lg md:text-2xl mb-8 max-w-3xl mx-auto">A plataforma completa para você aprender, dominar e investir em um futuro mais sustentável.</p>
+                <div class="space-x-4">
+                    <a href="#cursos" class="bg-educarbo-green text-white px-8 py-3 rounded-full text-lg hover:bg-educarbo-green-dark transition">Conheça Nossos Cursos</a>
+                    <a href="#blog" class="text-white hover:underline">Explore o conteúdo gratuito &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. "Para Quem é" Section -->
+        <section id="sobre" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-educarbo-gray mb-12">Educação em sustentabilidade para todos os objetivos.</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-left">
+                        <i data-lucide="user" class="w-12 h-12 text-educarbo-blue mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-4">Para Você</h3>
+                        <p class="text-gray-600 mb-6">Quer entender o mercado do zero, investir de forma mais consciente ou construir uma carreira de impacto no setor de sustentabilidade? Nossos cursos te guiam passo a passo, do básico ao especialista.</p>
+                        <a href="#" class="text-educarbo-green font-bold hover:underline">Ver cursos para Pessoas Físicas &rarr;</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-left">
+                        <i data-lucide="building-2" class="w-12 h-12 text-educarbo-blue mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-4">Para Sua Empresa</h3>
+                        <p class="text-gray-600 mb-6">Precisa capacitar sua equipe, entender as novas legislações, implementar uma cultura ESG ou posicionar sua marca como líder em sustentabilidade? Temos as soluções corporativas ideais para o seu negócio.</p>
+                        <a href="#" class="text-educarbo-green font-bold hover:underline">Ver soluções corporativas &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Cursos em Destaque Section -->
+        <section id="cursos" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-educarbo-gray mb-12">Comece sua jornada por aqui</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Curso 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/a8e6cf/333333?text=Iniciante" alt="Curso para iniciantes" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                             <span class="text-sm bg-educarbo-blue text-white py-1 px-3 rounded-full">🔰 Iniciante</span>
+                            <h3 class="text-xl font-bold my-3">Crédito de Carbono: Do Zero ao Investidor</h3>
+                            <p class="text-gray-600 text-sm mb-4">O curso ideal para quem não sabe nada sobre o tema. Entenda o que são, como funcionam e como dar os primeiros passos no mercado.</p>
+                            <a href="#" class="text-educarbo-green font-bold hover:underline">Saiba Mais &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Curso 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/dcedc1/333333?text=Intermediário" alt="Curso Intermediário" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <span class="text-sm bg-educarbo-blue text-white py-1 px-3 rounded-full">🧩 Intermediário</span>
+                            <h3 class="text-xl font-bold my-3">ESG na Prática: Implementando Estratégias</h3>
+                            <p class="text-gray-600 text-sm mb-4">Aprenda a desenvolver e gerenciar estratégias de Environmental, Social and Governance que geram valor real para sua empresa.</p>
+                            <a href="#" class="text-educarbo-green font-bold hover:underline">Saiba Mais &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Curso 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/ffd3b6/333333?text=Avançado" alt="Curso Avançado" class="w-full h-48 object-cover">
+                        <div class="p-6 text-left">
+                            <span class="text-sm bg-educarbo-blue text-white py-1 px-3 rounded-full">🚀 Avançado</span>
+                            <h3 class="text-xl font-bold my-3">Mercados Voluntário e Regulado: Análise</h3>
+                            <p class="text-gray-600 text-sm mb-4">Para profissionais que buscam aprofundar seus conhecimentos em precificação, auditoria e standards internacionais.</p>
+                            <a href="#" class="text-educarbo-green font-bold hover:underline">Saiba Mais &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Depoimentos -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-educarbo-gray mb-12">O que nossos alunos e parceiros dizem</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <img src="https://placehold.co/100x100/eeeeee/333333?text=AS" class="w-24 h-24 rounded-full mx-auto mb-4" alt="Foto de Ana Silva">
+                        <p class="text-gray-600 italic mb-4">"O curso da EduCarbo foi um divisor de águas para a nossa estratégia de sustentabilidade. Conteúdo direto, prático e 100% aplicável."</p>
+                        <p class="font-bold text-educarbo-green">Ana Silva</p>
+                        <p class="text-sm text-gray-500">Gerente de Sustentabilidade na Empresa X</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Blog Section -->
+        <section id="blog" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-educarbo-gray mb-12">Mantenha-se atualizado com nosso Blog</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Artigo 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden text-left">
+                        <img src="https://placehold.co/600x400/34495e/ffffff?text=Acordo+de+Paris" alt="Artigo sobre o Acordo de Paris" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">Legislação • 05 de Setembro, 2025</p>
+                            <h3 class="text-xl font-bold mb-3">O que é o Acordo de Paris e qual o seu impacto no mercado de carbono?</h3>
+                            <p class="text-gray-600 text-sm mb-4">Entenda os pilares do tratado global que mudou as regras do jogo climático e como ele impulsiona o mercado de carbono hoje.</p>
+                            <button data-modal-target="modal-1" class="open-modal-button text-educarbo-green font-bold hover:underline">Ler Artigo Completo &rarr;</button>
+                        </div>
+                    </div>
+                    <!-- Artigo 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden text-left">
+                        <img src="https://placehold.co/600x400/1abc9c/ffffff?text=Tendências+2026" alt="Artigo sobre tendências" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <p class="text-sm text-gray-500 mb-2">Mercado • 01 de Setembro, 2025</p>
+                            <h3 class="text-xl font-bold mb-3">5 Tendências do Mercado de Carbono para Ficar de Olho em 2026</h3>
+                            <p class="text-gray-600 text-sm mb-4">Da tokenização de créditos à ascensão do "carbon removal", saiba o que esperar e como se preparar para o futuro do setor.</p>
+                            <button data-modal-target="modal-2" class="open-modal-button text-educarbo-green font-bold hover:underline">Ler Artigo Completo &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-educarbo-gray text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://i.ibb.co/L5T1fV9/edu-Carbo.jpg" alt="Logo EduCarbo" class="h-10 mb-4 filter brightness-0 invert">
+                    <p class="text-sm text-gray-300">Investindo na educação para um futuro mais sustentável.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Navegação</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#sobre" class="text-gray-300 hover:text-white">Sobre Nós</a></li>
+                        <li><a href="#cursos" class="text-gray-300 hover:text-white">Cursos</a></li>
+                        <li><a href="#blog" class="text-gray-300 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Preços</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Termos de Serviço</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Siga-nos</h4>
+                    <div class="flex space-x-4">
+                        <a href="#"><i data-lucide="linkedin" class="w-6 h-6 text-gray-300 hover:text-white"></i></a>
+                        <a href="#"><i data-lucide="instagram" class="w-6 h-6 text-gray-300 hover:text-white"></i></a>
+                        <a href="#"><i data-lucide="youtube" class="w-6 h-6 text-gray-300 hover:text-white"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-400">
+                <p>&copy; 2025 EduCarbo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== CHAT WIDGET ========== -->
+    <div id="chat-widget-container" class="fixed bottom-5 right-5 z-50">
+        <!-- Chat Button -->
+        <button id="chat-open-button" class="bg-educarbo-blue text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center animate-pulse-blue">
+            <i data-lucide="message-circle" class="w-8 h-8"></i>
+        </button>
+        <!-- Chat Window -->
+        <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 bg-white rounded-lg shadow-xl border border-gray-200 flex flex-col">
+            <!-- Header -->
+            <div class="bg-educarbo-blue p-4 text-white rounded-t-lg flex justify-between items-center">
+                <div>
+                    <h3 class="font-bold">Assistente EduCarbo</h3>
+                    <p class="text-xs">Normalmente responde em minutos</p>
+                </div>
+                 <button id="chat-close-button" class="text-white">&times;</button>
+            </div>
+            <!-- Messages -->
+            <div class="p-4 h-64 overflow-y-auto">
+                <div class="flex mb-4">
+                    <div class="bg-gray-200 p-3 rounded-lg max-w-xs">
+                        <p class="text-sm">Olá! 🌱 Bem-vindo(a) à EduCarbo. Sou seu assistente virtual. Como posso ajudar?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Input -->
+            <div class="p-4 border-t border-gray-200">
+                <div class="relative">
+                    <input type="text" placeholder="Digite sua mensagem..." class="w-full pl-3 pr-10 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-educarbo-blue">
+                    <button class="absolute right-3 top-1/2 -translate-y-1/2 text-educarbo-blue">
+                         <i data-lucide="send" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MODALS PARA ARTIGOS DO BLOG ========== -->
+    <!-- Modal 1 -->
+    <div id="modal-1" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+             <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold text-educarbo-gray">Nosso Blog</h2>
+                <button data-modal-target="modal-1" class="close-modal-button text-2xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <h1 class="text-3xl font-bold mb-4">O que é o Acordo de Paris e qual o seu impacto no mercado de carbono?</h1>
+                <p class="text-sm text-gray-500 mb-6">Legislação • 05 de Setembro, 2025</p>
+                
+                <p class="mb-4">Você provavelmente já ouviu falar em 'Acordo de Paris', mas você sabe exatamente o que ele significa e como impacta diretamente o mercado de carbono? Longe de ser apenas um termo técnico para especialistas, este acordo é uma das ferramentas mais poderosas que temos hoje para combater as mudanças climáticas. Neste artigo, vamos desmistificar esse conceito de forma simples e direta.</p>
+
+                <h3 class="text-xl font-bold mt-6 mb-3">Uma analogia simples: A "moeda" do ar limpo.</h3>
+                <p class="mb-4">Imagine que cada país e cada grande empresa tem uma 'cota' de poluição que pode emitir. Se uma empresa investe em tecnologia limpa e polui menos do que sua cota, ela gera um 'saldo positivo'. Esse saldo pode ser transformado em um 'crédito de carbono'. Basicamente, 1 crédito de carbono equivale a 1 tonelada de dióxido de carbono (CO₂) que deixou de ser emitida na atmosfera.</p>
+                
+                <img src="https://placehold.co/800x400/34495e/ffffff?text=Gráfico+de+Redução+de+Emissões" class="rounded-lg my-6" alt="Gráfico de emissões">
+
+                <h3 class="text-xl font-bold mt-6 mb-3">Os 3 Pilares do Acordo de Paris</h3>
+                <ol class="list-decimal list-inside space-y-2 mb-4">
+                    <li><strong>Limitar o Aquecimento Global:</strong> O objetivo principal é manter o aumento da temperatura média global bem abaixo de 2°C em relação aos níveis pré-industriais, com esforços para limitar a 1.5°C.</li>
+                    <li><strong>Contribuições Nacionalmente Determinadas (NDCs):</strong> Cada país signatário apresenta suas próprias metas para reduzir emissões. Essas metas não são impostas, mas devem ser progressivamente mais ambiciosas.</li>
+                    <li><strong>Transparência e Financiamento:</strong> O acordo estabelece um sistema para que os países reportem suas emissões e progressos de forma transparente. Além disso, prevê que países desenvolvidos ajudem financeiramente os países em desenvolvimento na sua transição energética.</li>
+                </ol>
+
+                <h3 class="text-xl font-bold mt-6 mb-3">Conexão Direta com o Mercado de Carbono</h3>
+                <p class="mb-4">O Artigo 6 do Acordo de Paris é o coração dessa conexão. Ele permite que os países cooperem para atingir suas metas, o que inclui a possibilidade de comercializar "resultados de mitigação" entre si. Isso cria a base para um mercado de carbono global e regulado, onde um país que superou sua meta pode vender esse excedente para outro que não conseguiu. Isso incentiva economicamente a redução de emissões onde for mais barato e eficiente fazê-lo, acelerando a transição global.</p>
+
+                <div class="mt-8 p-4 bg-educarbo-green bg-opacity-10 border-l-4 border-educarbo-green text-educarbo-green rounded-r-lg">
+                    <p class="font-bold">Quer se aprofundar e se tornar um especialista no assunto? Conheça nosso curso <a href="#cursos" class="underline">Crédito de Carbono: Do Zero ao Investidor</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 2 -->
+     <div id="modal-2" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+             <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold text-educarbo-gray">Nosso Blog</h2>
+                <button data-modal-target="modal-2" class="close-modal-button text-2xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <h1 class="text-3xl font-bold mb-4">5 Tendências do Mercado de Carbono para Ficar de Olho em 2026</h1>
+                <p class="text-sm text-gray-500 mb-6">Mercado • 01 de Setembro, 2025</p>
+                
+                <p class="mb-4">O mercado de carbono está evoluindo a uma velocidade impressionante. O que era um nicho há alguns anos, hoje é pauta central em salas de diretoria e governos ao redor do mundo. Para se manter relevante e aproveitar as oportunidades, é crucial olhar para o futuro. Aqui estão 5 tendências que irão moldar o setor em 2026.</p>
+
+                <h3 class="text-xl font-bold mt-6 mb-3">1. Tokenização e Blockchain</h3>
+                <p class="mb-4">A tecnologia blockchain está chegando para aumentar a transparência e a liquidez do mercado voluntário. Ao transformar créditos de carbono em tokens digitais (NFTs), é possível rastrear sua origem, transação e "aposentadoria" (uso final) de forma imutável, combatendo o problema da dupla contagem e facilitando o acesso para pequenos investidores.</p>
+
+                <h3 class="text-xl font-bold mt-6 mb-3">2. Foco em "Carbon Removal" (Remoção de Carbono)</h3>
+                <p class="mb-4">Até agora, o foco principal era em "evitar emissões" (como trocar uma usina a carvão por uma solar). A nova fronteira são os projetos de "remoção de carbono", que retiram ativamente o CO₂ já existente na atmosfera. Tecnologias como Direct Air Capture (DAC) e Bio-energy with Carbon Capture and Storage (BECCS) ganharão escala, e seus créditos terão um valor premium no mercado.</p>
+
+                <img src="https://placehold.co/800x400/1abc9c/ffffff?text=Tecnologia+de+Remoção+de+Carbono" class="rounded-lg my-6" alt="Remoção de carbono">
+
+                <h3 class="text-xl font-bold mt-6 mb-3">3. Qualidade e Co-benefícios como Diferencial</h3>
+                <p class="mb-4">O mercado está amadurecendo. Compradores não querem mais apenas um crédito barato; eles buscam projetos de alta qualidade que, além de reduzir emissões, tragam co-benefícios claros, como a proteção da biodiversidade, o desenvolvimento de comunidades locais e a preservação de recursos hídricos. Projetos com certificações robustas e que contam uma história de impacto positiva serão mais valorizados.</p>
+                
+                <h3 class="text-xl font-bold mt-6 mb-3">4. Integração com a Biodiversidade: Os Créditos da Natureza</h3>
+                <p class="mb-4">Além do carbono, o mundo está acordando para a crise da perda de biodiversidade. Veremos a ascensão dos "créditos de biodiversidade" ou "créditos da natureza", que funcionarão de forma semelhante aos de carbono, mas com o objetivo de financiar a preservação e restauração de ecossistemas vitais. Em muitos casos, eles serão "empilhados" junto com os créditos de carbono de um mesmo projeto.</p>
+
+                <h3 class="text-xl font-bold mt-6 mb-3">5. Regulação e Padronização do Mercado Voluntário</h3>
+                <p class="mb-4">Órgãos como o Integrity Council for the Voluntary Carbon Market (ICVCM) estão trabalhando para criar padrões globais e um selo de qualidade (Core Carbon Principles) para o mercado voluntário. Essa padronização trará mais segurança, confiança e, consequentemente, mais capital para o setor, aproximando o mercado voluntário do nível de robustez do mercado regulado.</p>
+                
+                 <div class="mt-8 p-4 bg-educarbo-blue bg-opacity-10 border-l-4 border-educarbo-blue text-educarbo-blue rounded-r-lg">
+                    <p class="font-bold">Prepare-se para o futuro! Nosso curso <a href="#cursos" class="underline">Mercados Voluntário e Regulado: Análise Avançada</a> cobre essas tendências em detalhes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializa os ícones Lucide
+            lucide.createIcons();
+
+            // Menu Mobile
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Chat Widget
+            const chatOpenButton = document.getElementById('chat-open-button');
+            const chatCloseButton = document.getElementById('chat-close-button');
+            const chatWindow = document.getElementById('chat-window');
+            
+            chatOpenButton.addEventListener('click', () => {
+                chatWindow.classList.remove('hidden');
+                chatOpenButton.classList.add('hidden');
+            });
+
+            chatCloseButton.addEventListener('click', () => {
+                chatWindow.classList.add('hidden');
+                chatOpenButton.classList.remove('hidden');
+            });
+
+            // Modal de Artigos do Blog
+            const openModalButtons = document.querySelectorAll('.open-modal-button');
+            const closeModalButtons = document.querySelectorAll('.close-modal-button');
+
+            const toggleModal = (modalId) => {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.toggle('hidden');
+                }
+            };
+            
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modalId = button.getAttribute('data-modal-target');
+                    toggleModal(modalId);
+                });
+            });
+
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modalId = button.getAttribute('data-modal-target');
+                    toggleModal(modalId);
+                });
+            });
+
+            // Fechar modal ao clicar fora
+            window.addEventListener('click', (event) => {
+                if (event.target.id.startsWith('modal-')) {
+                    toggleModal(event.target.id);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
