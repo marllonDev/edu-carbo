@@ -14,12 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- Ícones (Lucide Icons) -->
-    <script src="https://unpkg.com/lucide-react@latest/dist/lucide-react.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-
 
     <style>
         /* Configurações personalizadas que complementam o Tailwind */
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Lato', sans-serif;
             color: #333;
@@ -62,20 +61,20 @@
 
     <!-- ========== HEADER ========== -->
     <header class="bg-white shadow-md sticky top-0 z-40">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div>
-                <img src="eduCarbo.jpg" alt="Logo EduCarbo" class="h-10">
+                <img src="eduCarbo.jpg" alt="Logo EduCarbo" class="h-14">
             </div>
             <div class="hidden lg:flex items-center space-x-8">
                 <a href="#home" class="text-educarbo-gray hover:text-educarbo-green transition">Home</a>
                 <a href="#sobre" class="text-educarbo-gray hover:text-educarbo-green transition">Sobre Nós</a>
                 <a href="#cursos" class="text-educarbo-gray hover:text-educarbo-green transition">Cursos</a>
                 <a href="#blog" class="text-educarbo-gray hover:text-educarbo-green transition">Blog</a>
-                <a href="#" class="text-educarbo-gray hover:text-educarbo-green transition">Preços</a>
+                <a href="#precos" class="text-educarbo-gray hover:text-educarbo-green transition">Preços</a>
             </div>
             <div class="hidden lg:flex items-center space-x-4">
                 <a href="#" class="text-educarbo-blue hover:underline">Entrar</a>
-                <a href="#" class="bg-educarbo-green text-white px-6 py-2 rounded-full hover:bg-educarbo-green-dark transition">Assine Agora</a>
+                <a href="#precos" class="bg-educarbo-green text-white px-6 py-2 rounded-full hover:bg-educarbo-green-dark transition">Assine Agora</a>
             </div>
             <div class="lg:hidden">
                 <button id="mobile-menu-button">
@@ -89,10 +88,10 @@
             <a href="#sobre" class="block text-educarbo-gray hover:text-educarbo-green transition">Sobre Nós</a>
             <a href="#cursos" class="block text-educarbo-gray hover:text-educarbo-green transition">Cursos</a>
             <a href="#blog" class="block text-educarbo-gray hover:text-educarbo-green transition">Blog</a>
-            <a href="#" class="block text-educarbo-gray hover:text-educarbo-green transition">Preços</a>
+            <a href="#precos" class="block text-educarbo-gray hover:text-educarbo-green transition">Preços</a>
              <div class="border-t pt-4 space-y-2">
                 <a href="#" class="block text-educarbo-blue hover:underline">Entrar</a>
-                <a href="#" class="block bg-educarbo-green text-white text-center px-6 py-2 rounded-full hover:bg-educarbo-green-dark transition">Assine Agora</a>
+                <a href="#precos" class="block bg-educarbo-green text-white text-center px-6 py-2 rounded-full hover:bg-educarbo-green-dark transition">Assine Agora</a>
             </div>
         </div>
     </header>
@@ -100,7 +99,7 @@
     <!-- ========== MAIN CONTENT ========== -->
     <main>
         <!-- 1. Hero Section -->
-        <section id="home" class="hero-section text-white h-[80vh] flex items-center">
+        <section id="home" class="hero-section text-white min-h-[80vh] flex items-center py-12">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Desvende o Mercado de Crédito de Carbono.</h1>
                 <p class="text-lg md:text-2xl mb-8 max-w-3xl mx-auto">A plataforma completa para você aprender, dominar e investir em um futuro mais sustentável.</p>
@@ -111,22 +110,48 @@
             </div>
         </section>
 
-        <!-- 2. "Para Quem é" Section -->
+        <!-- 2. "Sobre Nós" Section -->
         <section id="sobre" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold text-educarbo-gray mb-12">Educação em sustentabilidade para todos os objetivos.</h2>
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-left">
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-left transform hover:-translate-y-2 transition-transform duration-300">
                         <i data-lucide="user" class="w-12 h-12 text-educarbo-blue mb-4"></i>
                         <h3 class="text-2xl font-bold mb-4">Para Você</h3>
                         <p class="text-gray-600 mb-6">Quer entender o mercado do zero, investir de forma mais consciente ou construir uma carreira de impacto no setor de sustentabilidade? Nossos cursos te guiam passo a passo, do básico ao especialista.</p>
-                        <a href="#" class="text-educarbo-green font-bold hover:underline">Ver cursos para Pessoas Físicas &rarr;</a>
+                        <a href="#cursos" class="text-educarbo-green font-bold hover:underline">Ver cursos para Pessoas Físicas &rarr;</a>
                     </div>
-                    <div class="bg-white p-8 rounded-lg shadow-lg text-left">
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-left transform hover:-translate-y-2 transition-transform duration-300">
                         <i data-lucide="building-2" class="w-12 h-12 text-educarbo-blue mb-4"></i>
                         <h3 class="text-2xl font-bold mb-4">Para Sua Empresa</h3>
                         <p class="text-gray-600 mb-6">Precisa capacitar sua equipe, entender as novas legislações, implementar uma cultura ESG ou posicionar sua marca como líder em sustentabilidade? Temos as soluções corporativas ideais para o seu negócio.</p>
-                        <a href="#" class="text-educarbo-green font-bold hover:underline">Ver soluções corporativas &rarr;</a>
+                        <a href="#cursos" class="text-educarbo-green font-bold hover:underline">Ver soluções corporativas &rarr;</a>
+                    </div>
+                </div>
+                 <!-- Nossos Valores -->
+                <div class="mt-20">
+                    <h3 class="text-2xl font-bold text-educarbo-gray mb-10">Nossa missão é democratizar o conhecimento sobre a economia verde.</h3>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                        <div class="text-center">
+                            <i data-lucide="leaf" class="w-12 h-12 text-educarbo-green mx-auto mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">Sustentabilidade</h4>
+                            <p class="text-sm text-gray-600">Nosso compromisso fundamental com o planeta em cada aula que ministramos.</p>
+                        </div>
+                        <div class="text-center">
+                            <i data-lucide="book-open" class="w-12 h-12 text-educarbo-green mx-auto mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">Conhecimento Acessível</h4>
+                            <p class="text-sm text-gray-600">Tornamos o complexo em algo simples, prático e aplicável na sua carreira ou negócio.</p>
+                        </div>
+                        <div class="text-center">
+                           <i data-lucide="lightbulb" class="w-12 h-12 text-educarbo-green mx-auto mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">Inovação</h4>
+                            <p class="text-sm text-gray-600">Estamos sempre na vanguarda das tendências e tecnologias do setor de carbono.</p>
+                        </div>
+                        <div class="text-center">
+                            <i data-lucide="handshake" class="w-12 h-12 text-educarbo-green mx-auto mb-4"></i>
+                            <h4 class="font-bold text-lg mb-2">Transparência</h4>
+                            <p class="text-sm text-gray-600">Agimos com ética e clareza, construindo uma comunidade baseada na confiança.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,7 +169,7 @@
                              <span class="text-sm bg-educarbo-blue text-white py-1 px-3 rounded-full">🔰 Iniciante</span>
                             <h3 class="text-xl font-bold my-3">Crédito de Carbono: Do Zero ao Investidor</h3>
                             <p class="text-gray-600 text-sm mb-4">O curso ideal para quem não sabe nada sobre o tema. Entenda o que são, como funcionam e como dar os primeiros passos no mercado.</p>
-                            <a href="#" class="text-educarbo-green font-bold hover:underline">Saiba Mais &rarr;</a>
+                            <button data-modal-target="modal-curso-1" class="open-modal-button text-educarbo-green font-bold hover:underline">Saiba Mais &rarr;</button>
                         </div>
                     </div>
                     <!-- Curso 2 -->
@@ -154,7 +179,7 @@
                             <span class="text-sm bg-educarbo-blue text-white py-1 px-3 rounded-full">🧩 Intermediário</span>
                             <h3 class="text-xl font-bold my-3">ESG na Prática: Implementando Estratégias</h3>
                             <p class="text-gray-600 text-sm mb-4">Aprenda a desenvolver e gerenciar estratégias de Environmental, Social and Governance que geram valor real para sua empresa.</p>
-                            <a href="#" class="text-educarbo-green font-bold hover:underline">Saiba Mais &rarr;</a>
+                            <button data-modal-target="modal-curso-2" class="open-modal-button text-educarbo-green font-bold hover:underline">Saiba Mais &rarr;</button>
                         </div>
                     </div>
                     <!-- Curso 3 -->
@@ -164,7 +189,7 @@
                             <span class="text-sm bg-educarbo-blue text-white py-1 px-3 rounded-full">🚀 Avançado</span>
                             <h3 class="text-xl font-bold my-3">Mercados Voluntário e Regulado: Análise</h3>
                             <p class="text-gray-600 text-sm mb-4">Para profissionais que buscam aprofundar seus conhecimentos em precificação, auditoria e standards internacionais.</p>
-                            <a href="#" class="text-educarbo-green font-bold hover:underline">Saiba Mais &rarr;</a>
+                            <button data-modal-target="modal-curso-3" class="open-modal-button text-educarbo-green font-bold hover:underline">Saiba Mais &rarr;</button>
                         </div>
                     </div>
                 </div>
@@ -186,13 +211,27 @@
             </div>
         </section>
 
+        <!-- Nossos Parceiros -->
+        <section class="py-16">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-2xl font-bold text-educarbo-gray mb-8">Empresas que confiam na nossa educação</h2>
+                 <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+                    <img src="https://placehold.co/150x60/cccccc/888888?text=Empresa+A" alt="Logo Empresa A" class="h-10 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition">
+                    <img src="https://placehold.co/150x60/cccccc/888888?text=Startup+Verde" alt="Logo Startup Verde" class="h-10 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition">
+                    <img src="https://placehold.co/150x60/cccccc/888888?text=Consultoria+Global" alt="Logo Consultoria Global" class="h-10 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition">
+                    <img src="https://placehold.co/150x60/cccccc/888888?text=Banco+Sustentável" alt="Logo Banco Sustentável" class="h-10 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition">
+                    <img src="https://placehold.co/150x60/cccccc/888888?text=Tech+for+Good" alt="Logo Tech for Good" class="h-10 grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition">
+                 </div>
+            </div>
+        </section>
+
         <!-- 5. Blog Section -->
-        <section id="blog" class="py-20">
+        <section id="blog" class="py-20 bg-gray-50">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl font-bold text-educarbo-gray mb-12">Mantenha-se atualizado com nosso Blog</h2>
-                <div class="grid md:grid-cols-2 gap-8">
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <!-- Artigo 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden text-left">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden text-left transform hover:-translate-y-2 transition-transform duration-300">
                         <img src="https://placehold.co/600x400/34495e/ffffff?text=Acordo+de+Paris" alt="Artigo sobre o Acordo de Paris" class="w-full h-56 object-cover">
                         <div class="p-6">
                             <p class="text-sm text-gray-500 mb-2">Legislação • 05 de Setembro, 2025</p>
@@ -202,7 +241,7 @@
                         </div>
                     </div>
                     <!-- Artigo 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden text-left">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden text-left transform hover:-translate-y-2 transition-transform duration-300">
                         <img src="https://placehold.co/600x400/1abc9c/ffffff?text=Tendências+2026" alt="Artigo sobre tendências" class="w-full h-56 object-cover">
                         <div class="p-6">
                             <p class="text-sm text-gray-500 mb-2">Mercado • 01 de Setembro, 2025</p>
@@ -210,6 +249,56 @@
                             <p class="text-gray-600 text-sm mb-4">Da tokenização de créditos à ascensão do "carbon removal", saiba o que esperar e como se preparar para o futuro do setor.</p>
                             <button data-modal-target="modal-2" class="open-modal-button text-educarbo-green font-bold hover:underline">Ler Artigo Completo &rarr;</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Preços Section -->
+        <section id="precos" class="py-20">
+             <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-educarbo-gray mb-4">Escolha o plano que impulsionará seu futuro.</h2>
+                <p class="text-gray-600 mb-12 max-w-2xl mx-auto">Acesso ilimitado à nossa plataforma de conhecimento. Cancele quando quiser.</p>
+                <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Plano Visitante -->
+                    <div class="border rounded-lg p-8">
+                        <h3 class="text-2xl font-bold mb-4">Visitante</h3>
+                        <p class="text-4xl font-bold mb-4">Grátis</p>
+                        <p class="text-gray-500 mb-6 h-12">Para explorar nosso conteúdo.</p>
+                        <a href="#blog" class="w-full block bg-gray-200 text-gray-800 py-3 rounded-full hover:bg-gray-300 transition">Navegar pelo conteúdo</a>
+                        <ul class="text-left space-y-3 mt-6 text-sm">
+                            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-educarbo-green mr-2"></i>Acesso ao Blog e Artigos</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-educarbo-green mr-2"></i>Newsletter semanal</li>
+                             <li class="flex items-center text-gray-400"><i data-lucide="x" class="w-5 h-5 text-gray-400 mr-2"></i>Acesso ilimitado aos cursos</li>
+                            <li class="flex items-center text-gray-400"><i data-lucide="x" class="w-5 h-5 text-gray-400 mr-2"></i>Emissão de Certificados</li>
+                        </ul>
+                    </div>
+                     <!-- Plano Mensal -->
+                    <div class="border rounded-lg p-8 border-educarbo-green shadow-xl relative">
+                        <span class="bg-educarbo-green text-white text-xs font-bold px-3 py-1 rounded-full absolute -top-4 left-1/2 -translate-x-1/2">POPULAR</span>
+                        <h3 class="text-2xl font-bold mb-4">PRO Mensal</h3>
+                        <p class="text-4xl font-bold mb-4">R$ 79<span class="text-xl">,90</span></p>
+                        <p class="text-gray-500 mb-6 h-12">Flexibilidade total para aprender no seu ritmo.</p>
+                        <a href="#" class="w-full block bg-educarbo-green text-white py-3 rounded-full hover:bg-educarbo-green-dark transition">Assinar Agora</a>
+                         <ul class="text-left space-y-3 mt-6 text-sm">
+                            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-educarbo-green mr-2"></i><strong>Tudo do plano Visitante, e mais:</strong></li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-educarbo-green mr-2"></i>Acesso <strong>ilimitado</strong> a todos os cursos</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-educarbo-green mr-2"></i>Material de Apoio (PDFs, planilhas)</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-educarbo-green mr-2"></i>Emissão de Certificados</li>
+                             <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-educarbo-green mr-2"></i>Acesso à Comunidade Exclusiva</li>
+                        </ul>
+                    </div>
+                     <!-- Plano Anual -->
+                    <div class="border rounded-lg p-8">
+                        <h3 class="text-2xl font-bold mb-4">PRO Anual</h3>
+                        <p class="text-4xl font-bold mb-4">R$ 66<span class="text-xl">,58</span></p>
+                        <p class="text-gray-500 mb-6 h-12">Economize 20% com o plano anual. O melhor custo-benefício.</p>
+                         <a href="#" class="w-full block bg-educarbo-blue text-white py-3 rounded-full hover:bg-educarbo-blue-dark transition">Quero Economizar</a>
+                         <ul class="text-left space-y-3 mt-6 text-sm">
+                            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-educarbo-green mr-2"></i><strong>Tudo do plano Mensal, e mais:</strong></li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-educarbo-green mr-2"></i>Webinars exclusivos com especialistas</li>
+                            <li class="flex items-center"><i data-lucide="check" class="w-5 h-5 text-educarbo-green mr-2"></i><strong>2 meses grátis</strong> (embutido no preço)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -231,7 +320,7 @@
                         <li><a href="#sobre" class="text-gray-300 hover:text-white">Sobre Nós</a></li>
                         <li><a href="#cursos" class="text-gray-300 hover:text-white">Cursos</a></li>
                         <li><a href="#blog" class="text-gray-300 hover:text-white">Blog</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Preços</a></li>
+                        <li><a href="#precos" class="text-gray-300 hover:text-white">Preços</a></li>
                     </ul>
                 </div>
                  <div>
@@ -265,12 +354,12 @@
         <!-- Chat Window -->
         <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 bg-white rounded-lg shadow-xl border border-gray-200 flex flex-col">
             <!-- Header -->
-            <div class="bg-educarbo-blue p-4 text-white rounded-t-lg flex justify-between items-center">
+            <div class="bg-educarbo-blue p-4 text-white rounded-t-lg flex justify-between items-center cursor-pointer">
                 <div>
                     <h3 class="font-bold">Assistente EduCarbo</h3>
                     <p class="text-xs">Normalmente responde em minutos</p>
                 </div>
-                 <button id="chat-close-button" class="text-white">&times;</button>
+                 <button id="chat-close-button" class="text-white text-2xl leading-none">&times;</button>
             </div>
             <!-- Messages -->
             <div class="p-4 h-64 overflow-y-auto">
@@ -292,8 +381,92 @@
         </div>
     </div>
 
+    <!-- Modals (Pop-ups) for content -->
+    <!-- Include modals for courses and blog posts here -->
+
+    <!-- ========== MODALS PARA CURSOS ========== -->
+    <div id="modal-curso-1" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold text-educarbo-gray">Detalhes do Curso</h2>
+                <button data-modal-target="modal-curso-1" class="close-modal-button text-2xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <span class="text-sm bg-educarbo-blue text-white py-1 px-3 rounded-full mb-4 inline-block">🔰 Iniciante</span>
+                <h1 class="text-3xl font-bold mb-4">Crédito de Carbono: Do Zero ao Investidor</h1>
+                <p class="text-gray-600 mb-6">O curso ideal para quem não sabe nada sobre o tema e deseja entender os fundamentos, o funcionamento do mercado e como realizar os primeiros investimentos de forma segura e consciente.</p>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div><strong class="block text-educarbo-gray">Duração:</strong> 8 horas</div>
+                    <div><strong class="block text-educarbo-gray">Instrutor:</strong> Dr. Ricardo Alves</div>
+                    <div><strong class="block text-educarbo-gray">Acesso:</strong> Vitalício</div>
+                    <div><strong class="block text-educarbo-gray">Certificado:</strong> Incluso</div>
+                </div>
+
+                <h3 class="text-xl font-bold mt-6 mb-3">O que você vai aprender:</h3>
+                <ul class="list-disc list-inside space-y-2 mb-4">
+                    <li>O que é o efeito estufa e a ciência por trás das mudanças climáticas.</li>
+                    <li>A definição exata de um crédito de carbono e como ele é gerado.</li>
+                    <li>Diferenciar o Mercado Regulado (Protocolo de Kyoto) do Mercado Voluntário.</li>
+                    <li>Os principais tipos de projetos que geram créditos (reflorestamento, energia renovável, etc.).</li>
+                    <li>Como analisar a qualidade de um crédito e evitar o greenwashing.</li>
+                    <li>Plataformas e métodos para comprar seus primeiros créditos de carbono.</li>
+                </ul>
+                <a href="#precos" class="w-full block text-center mt-8 bg-educarbo-green text-white py-3 rounded-full hover:bg-educarbo-green-dark transition">Quero me inscrever</a>
+            </div>
+        </div>
+    </div>
+    <div id="modal-curso-2" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+             <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold text-educarbo-gray">Detalhes do Curso</h2>
+                <button data-modal-target="modal-curso-2" class="close-modal-button text-2xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <span class="text-sm bg-educarbo-blue text-white py-1 px-3 rounded-full mb-4 inline-block">🧩 Intermediário</span>
+                <h1 class="text-3xl font-bold mb-4">ESG na Prática: Implementando Estratégias</h1>
+                 <p class="text-gray-600 mb-6">Vá além da teoria. Este curso é um guia prático para gestores, analistas e consultores que precisam desenvolver, implementar e monitorar estratégias de Environmental, Social and Governance que criam valor para o negócio e a sociedade.</p>
+
+                <h3 class="text-xl font-bold mt-6 mb-3">Módulos do Curso:</h3>
+                <ol class="list-decimal list-inside space-y-2 mb-4">
+                    <li><strong>Fundamentos do ESG:</strong> Entendendo cada pilar e sua importância estratégica.</li>
+                    <li><strong>Matriz de Materialidade:</strong> Como identificar os temas ESG mais relevantes para o seu negócio.</li>
+                    <li><strong>Frameworks e Relatórios:</strong> Dominando os padrões GRI, SASB e TCFD.</li>
+                    <li><strong>Engajamento de Stakeholders:</strong> Construindo diálogo e parcerias estratégicas.</li>
+                    <li><strong>Métricas e KPIs:</strong> Como medir e comprovar o impacto das suas ações.</li>
+                </ol>
+                <a href="#precos" class="w-full block text-center mt-8 bg-educarbo-green text-white py-3 rounded-full hover:bg-educarbo-green-dark transition">Quero me inscrever</a>
+            </div>
+        </div>
+    </div>
+    <div id="modal-curso-3" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+         <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+             <div class="flex justify-between items-center p-4 border-b">
+                <h2 class="text-xl font-bold text-educarbo-gray">Detalhes do Curso</h2>
+                <button data-modal-target="modal-curso-3" class="close-modal-button text-2xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto">
+                <span class="text-sm bg-educarbo-blue text-white py-1 px-3 rounded-full mb-4 inline-block">🚀 Avançado</span>
+                <h1 class="text-3xl font-bold mb-4">Mercados Voluntário e Regulado: Análise</h1>
+                <p class="text-gray-600 mb-6">Um mergulho profundo nas complexidades dos mercados de carbono para profissionais experientes. Analise precificação, volatilidade, derivativos de carbono, due diligence de projetos e as últimas tendências regulatórias globais.</p>
+
+                 <h3 class="text-xl font-bold mt-6 mb-3">Para quem é este curso:</h3>
+                 <p class="mb-4">Gestores de portfólio, traders, analistas financeiros, advogados do setor ambiental e consultores sênior de sustentabilidade.</p>
+
+                <h3 class="text-xl font-bold mt-6 mb-3">Tópicos Avançados:</h3>
+                 <ul class="list-disc list-inside space-y-2 mb-4">
+                    <li>Análise de Standards: Verra (VCS), Gold Standard, ACR.</li>
+                    <li>Precificação, Risco e Volatilidade de Créditos.</li>
+                    <li>Due Diligence e Verificação de Projetos.</li>
+                    <li>O futuro do Artigo 6 do Acordo de Paris.</li>
+                    <li>Tokenização e o papel do Blockchain no mercado.</li>
+                </ul>
+                <a href="#precos" class="w-full block text-center mt-8 bg-educarbo-green text-white py-3 rounded-full hover:bg-educarbo-green-dark transition">Quero me inscrever</a>
+            </div>
+        </div>
+    </div>
+
     <!-- ========== MODALS PARA ARTIGOS DO BLOG ========== -->
-    <!-- Modal 1 -->
     <div id="modal-1" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
              <div class="flex justify-between items-center p-4 border-b">
@@ -303,32 +476,17 @@
             <div class="p-6 overflow-y-auto">
                 <h1 class="text-3xl font-bold mb-4">O que é o Acordo de Paris e qual o seu impacto no mercado de carbono?</h1>
                 <p class="text-sm text-gray-500 mb-6">Legislação • 05 de Setembro, 2025</p>
-                
                 <p class="mb-4">Você provavelmente já ouviu falar em 'Acordo de Paris', mas você sabe exatamente o que ele significa e como impacta diretamente o mercado de carbono? Longe de ser apenas um termo técnico para especialistas, este acordo é uma das ferramentas mais poderosas que temos hoje para combater as mudanças climáticas. Neste artigo, vamos desmistificar esse conceito de forma simples e direta.</p>
-
-                <h3 class="text-xl font-bold mt-6 mb-3">Uma analogia simples: A "moeda" do ar limpo.</h3>
-                <p class="mb-4">Imagine que cada país e cada grande empresa tem uma 'cota' de poluição que pode emitir. Se uma empresa investe em tecnologia limpa e polui menos do que sua cota, ela gera um 'saldo positivo'. Esse saldo pode ser transformado em um 'crédito de carbono'. Basicamente, 1 crédito de carbono equivale a 1 tonelada de dióxido de carbono (CO₂) que deixou de ser emitida na atmosfera.</p>
-                
                 <img src="https://placehold.co/800x400/34495e/ffffff?text=Gráfico+de+Redução+de+Emissões" class="rounded-lg my-6" alt="Gráfico de emissões">
-
                 <h3 class="text-xl font-bold mt-6 mb-3">Os 3 Pilares do Acordo de Paris</h3>
                 <ol class="list-decimal list-inside space-y-2 mb-4">
                     <li><strong>Limitar o Aquecimento Global:</strong> O objetivo principal é manter o aumento da temperatura média global bem abaixo de 2°C em relação aos níveis pré-industriais, com esforços para limitar a 1.5°C.</li>
                     <li><strong>Contribuições Nacionalmente Determinadas (NDCs):</strong> Cada país signatário apresenta suas próprias metas para reduzir emissões. Essas metas não são impostas, mas devem ser progressivamente mais ambiciosas.</li>
                     <li><strong>Transparência e Financiamento:</strong> O acordo estabelece um sistema para que os países reportem suas emissões e progressos de forma transparente. Além disso, prevê que países desenvolvidos ajudem financeiramente os países em desenvolvimento na sua transição energética.</li>
                 </ol>
-
-                <h3 class="text-xl font-bold mt-6 mb-3">Conexão Direta com o Mercado de Carbono</h3>
-                <p class="mb-4">O Artigo 6 do Acordo de Paris é o coração dessa conexão. Ele permite que os países cooperem para atingir suas metas, o que inclui a possibilidade de comercializar "resultados de mitigação" entre si. Isso cria a base para um mercado de carbono global e regulado, onde um país que superou sua meta pode vender esse excedente para outro que não conseguiu. Isso incentiva economicamente a redução de emissões onde for mais barato e eficiente fazê-lo, acelerando a transição global.</p>
-
-                <div class="mt-8 p-4 bg-educarbo-green bg-opacity-10 border-l-4 border-educarbo-green text-educarbo-green rounded-r-lg">
-                    <p class="font-bold">Quer se aprofundar e se tornar um especialista no assunto? Conheça nosso curso <a href="#cursos" class="underline">Crédito de Carbono: Do Zero ao Investidor</a>.</p>
-                </div>
             </div>
         </div>
     </div>
-    
-    <!-- Modal 2 -->
      <div id="modal-2" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col">
              <div class="flex justify-between items-center p-4 border-b">
@@ -338,33 +496,13 @@
             <div class="p-6 overflow-y-auto">
                 <h1 class="text-3xl font-bold mb-4">5 Tendências do Mercado de Carbono para Ficar de Olho em 2026</h1>
                 <p class="text-sm text-gray-500 mb-6">Mercado • 01 de Setembro, 2025</p>
-                
                 <p class="mb-4">O mercado de carbono está evoluindo a uma velocidade impressionante. O que era um nicho há alguns anos, hoje é pauta central em salas de diretoria e governos ao redor do mundo. Para se manter relevante e aproveitar as oportunidades, é crucial olhar para o futuro. Aqui estão 5 tendências que irão moldar o setor em 2026.</p>
-
+                <img src="https://placehold.co/800x400/1abc9c/ffffff?text=Tecnologia+de+Remoção+de+Carbono" class="rounded-lg my-6" alt="Remoção de carbono">
                 <h3 class="text-xl font-bold mt-6 mb-3">1. Tokenização e Blockchain</h3>
                 <p class="mb-4">A tecnologia blockchain está chegando para aumentar a transparência e a liquidez do mercado voluntário. Ao transformar créditos de carbono em tokens digitais (NFTs), é possível rastrear sua origem, transação e "aposentadoria" (uso final) de forma imutável, combatendo o problema da dupla contagem e facilitando o acesso para pequenos investidores.</p>
-
-                <h3 class="text-xl font-bold mt-6 mb-3">2. Foco em "Carbon Removal" (Remoção de Carbono)</h3>
-                <p class="mb-4">Até agora, o foco principal era em "evitar emissões" (como trocar uma usina a carvão por uma solar). A nova fronteira são os projetos de "remoção de carbono", que retiram ativamente o CO₂ já existente na atmosfera. Tecnologias como Direct Air Capture (DAC) e Bio-energy with Carbon Capture and Storage (BECCS) ganharão escala, e seus créditos terão um valor premium no mercado.</p>
-
-                <img src="https://placehold.co/800x400/1abc9c/ffffff?text=Tecnologia+de+Remoção+de+Carbono" class="rounded-lg my-6" alt="Remoção de carbono">
-
-                <h3 class="text-xl font-bold mt-6 mb-3">3. Qualidade e Co-benefícios como Diferencial</h3>
-                <p class="mb-4">O mercado está amadurecendo. Compradores não querem mais apenas um crédito barato; eles buscam projetos de alta qualidade que, além de reduzir emissões, tragam co-benefícios claros, como a proteção da biodiversidade, o desenvolvimento de comunidades locais e a preservação de recursos hídricos. Projetos com certificações robustas e que contam uma história de impacto positiva serão mais valorizados.</p>
-                
-                <h3 class="text-xl font-bold mt-6 mb-3">4. Integração com a Biodiversidade: Os Créditos da Natureza</h3>
-                <p class="mb-4">Além do carbono, o mundo está acordando para a crise da perda de biodiversidade. Veremos a ascensão dos "créditos de biodiversidade" ou "créditos da natureza", que funcionarão de forma semelhante aos de carbono, mas com o objetivo de financiar a preservação e restauração de ecossistemas vitais. Em muitos casos, eles serão "empilhados" junto com os créditos de carbono de um mesmo projeto.</p>
-
-                <h3 class="text-xl font-bold mt-6 mb-3">5. Regulação e Padronização do Mercado Voluntário</h3>
-                <p class="mb-4">Órgãos como o Integrity Council for the Voluntary Carbon Market (ICVCM) estão trabalhando para criar padrões globais e um selo de qualidade (Core Carbon Principles) para o mercado voluntário. Essa padronização trará mais segurança, confiança e, consequentemente, mais capital para o setor, aproximando o mercado voluntário do nível de robustez do mercado regulado.</p>
-                
-                 <div class="mt-8 p-4 bg-educarbo-blue bg-opacity-10 border-l-4 border-educarbo-blue text-educarbo-blue rounded-r-lg">
-                    <p class="font-bold">Prepare-se para o futuro! Nosso curso <a href="#cursos" class="underline">Mercados Voluntário e Regulado: Análise Avançada</a> cobre essas tendências em detalhes.</p>
-                </div>
             </div>
         </div>
     </div>
-
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
@@ -394,7 +532,7 @@
                 chatOpenButton.classList.remove('hidden');
             });
 
-            // Modal de Artigos do Blog
+            // Modal de Artigos e Cursos
             const openModalButtons = document.querySelectorAll('.open-modal-button');
             const closeModalButtons = document.querySelectorAll('.close-modal-button');
 
@@ -406,7 +544,8 @@
             };
             
             openModalButtons.forEach(button => {
-                button.addEventListener('click', () => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
                     const modalId = button.getAttribute('data-modal-target');
                     toggleModal(modalId);
                 });
